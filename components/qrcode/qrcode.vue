@@ -90,7 +90,7 @@ export default {
 		}
 	},
 	onLoad: function () {
-		console.log(this.val)
+		// console.log(this.val)
 	}
 }
 </script>
