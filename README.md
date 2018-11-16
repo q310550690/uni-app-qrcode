@@ -62,3 +62,8 @@ _saveCode() 保存二维码到图库
 
 ### 5.问题
 H5 暂时无法使用
+
+### 6.感谢
+
+[uni-app](https://uniapp.dcloud.io/ "uni-app")
+[weapp-qrcode](https://github.com/tomfriwel/weapp-qrcode "weapp-qrcode")
