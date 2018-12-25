@@ -1,6 +1,6 @@
 <template xlang="wxml">
 	<view class="container">
-		<page-head :title="title"></page-head>
+		<!-- <page-head :title="title"></page-head> -->
 		<view class="qrimg">
 			<qrcode :val="qrval" :size="qrsize" :colorDark="qrColorDark" :colorLight="qrColorLight" ref="qrcode" @result="qrR"></qrcode>
 		</view>
@@ -26,7 +26,7 @@
 				<button type="warn" @tap="clearQrcode">清除二维码</button>
 			</view>
 		</view>
-		<page-foot :name="name"></page-foot>
+		<!-- <page-foot :name="name"></page-foot> -->
 	</view>
 </template>
 <script>
