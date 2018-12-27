@@ -9,7 +9,7 @@
 import QRCode from "./qrcode.js"
 let qrcode
 export default {
-	name: "qrCode",
+	name: "tki-qrcode",
 	props: {
 		size: {
 			type: Number,
