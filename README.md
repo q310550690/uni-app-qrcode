@@ -4,7 +4,7 @@
 
 ## 开始使用
 
-npm i tk-qrcode
+npm i tki-qrcode
 或
 https://github.com/q310550690/uni-app-qrcode 
 
@@ -14,9 +14,9 @@ https://github.com/q310550690/uni-app-qrcode
 <qrcode :val="qrval" :size="qrsize" :colorDark="qrColorDark" :colorLight="qrColorLight" ref="qrcode" @result="qrR"></qrcode>
 
 // 普通引入组件
-import qrcode from '@/components/tkQrcode/tkQrcode.vue'
+import qrcode from '@/components/tkiQrcode/tkiQrcode.vue'
 // npmy引入
-import qrcode from "tk-qrcode"
+import qrcode from "tki-qrcode"
 // 注册组件
 components: {
     qrcode

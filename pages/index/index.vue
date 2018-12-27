@@ -30,7 +30,7 @@
 	</view>
 </template>
 <script>
-import qrcode from '@/components/tkQrcode/tkQrcode.vue'
+import qrcode from '@/components/tkiQrcode/tkiQrcode.vue'
 export default {
 	data() {
 		return {
