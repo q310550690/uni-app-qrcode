@@ -9,9 +9,10 @@
 // template 使用
 <qrcode :val="qrval" :size="qrsize" :colorDark="qrColorDark" :colorLight="qrColorLight" ref="qrcode" @result="qrR"></qrcode>
 
-// 引入组件
+// 普通引入组件
 import qrcode from "../../components/qrcode/qrcode.vue"
-
+// npmy引入
+import qrcode from "tk-qrcode"
 // 注册组件
 components: {
     qrcode

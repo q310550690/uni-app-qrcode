@@ -1,0 +1,24 @@
+{
+  "name": "tk-qrcode",
+  "version": "0.0.1",
+  "description": "qrcode",
+  "main": "components/qrcode/qrcode.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/q310550690/uni-app-qrcode.git"
+  },
+  "keywords": [
+    "qrcode",
+    "mpvue",
+    "uni-app"
+  ],
+  "author": "sxq",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/q310550690/uni-app-qrcode/issues"
+  },
+  "homepage": "https://github.com/q310550690/uni-app-qrcode#readme"
+}
