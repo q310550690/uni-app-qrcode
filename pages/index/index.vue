@@ -2,7 +2,7 @@
 	<view class="container">
 		<!-- <page-head :title="title"></page-head> -->
 		<view class="qrimg">
-			<qrcode :val="qrval" :size="qrsize" :colorDark="qrColorDark" :colorLight="qrColorLight" ref="qrcode" @result="qrR"></qrcode>
+			<tki-qrcode :val="qrval" :size="qrsize" :colorDark="qrColorDark" :colorLight="qrColorLight" ref="qrcode" @result="qrR"></tki-qrcode>
 		</view>
 		<view class="uni-padding-wrap">
 			<view class="uni-title">请输入要生成的二维码内容</view>
@@ -30,7 +30,7 @@
 	</view>
 </template>
 <script>
-import qrcode from '@/components/tkiQrcode/tkiQrcode.vue'
+import tkiQrcode from '@/components/tki-qrcode/tki-qrcode.vue'
 export default {
 	data() {
 		return {
@@ -75,7 +75,7 @@ export default {
 		}
 	},
 	components: {
-		qrcode
+		tkiQrcode
 	}
 }
 </script>

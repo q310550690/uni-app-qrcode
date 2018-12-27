@@ -11,15 +11,15 @@ https://github.com/q310550690/uni-app-qrcode
 ### 1.引入组件
 ```javascript
 // template 使用
-<qrcode :val="qrval" :size="qrsize" :colorDark="qrColorDark" :colorLight="qrColorLight" ref="qrcode" @result="qrR"></qrcode>
+<tki-qrcode :val="qrval" :size="qrsize" :colorDark="qrColorDark" :colorLight="qrColorLight" ref="qrcode" @result="qrR"></tki-qrcode>
 
 // 普通引入组件
-import qrcode from '@/components/tkiQrcode/tkiQrcode.vue'
+import tkiQrcode from '@/components/tki-qrcode/tki-qrcode.vue'
 // npmy引入
-import qrcode from "tki-qrcode"
+import tkiQrcode from "tki-qrcode"
 // 注册组件
 components: {
-    qrcode
+    tkiQrcode
 },
 ```
 

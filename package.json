@@ -1,8 +1,8 @@
 {
   "name": "tki-qrcode",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "qrcode",
-  "main": "components/tkiQrcode/tkiQrcode.vue",
+  "main": "components/tki-qrcode/tki-qrcode.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
