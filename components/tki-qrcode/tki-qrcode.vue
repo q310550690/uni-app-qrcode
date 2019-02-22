@@ -13,7 +13,7 @@ export default {
 	props: {
 		size: {
 			type: Number,
-			default: 100
+			default: 200
 		},
 		show: {
 			type: Boolean,
@@ -23,13 +23,29 @@ export default {
 			type: String,
 			default: ''
 		},
-		colorDark: {
+		background: {
 			type: String,
 			default: '#000000'
 		},
-		colorLight: {
+		foreground: {
 			type: String,
 			default: '#ffffff'
+		},
+		pdground: {
+			type: String,
+			default: '#ffffff'
+		},
+		icon: {
+			type: String,
+			default: ''
+		},
+		iconSize: {
+			type: Number,
+			default: 40
+		},
+		lv: {
+			type: Number,
+			default: 3
 		},
 	},
 	data() {
@@ -42,18 +58,20 @@ export default {
 		_makeCode() {
 			let that = this
 			qrcode = new QRCode({
-				text: that.val,
-				width: that.cSize,
-				height: that.cSize,
-				colorDark: that.colorDark,
-				colorLight: that.colorLight,
-				correctLevel: QRCode.CorrectLevel.H,
-				cbResult: function (res) {
+				text: that.val, // 生成内容
+				size: that.cSize, // 二维码大小
+				background: that.background, // 背景色
+				foreground: that.foreground, // 前景色
+				pdground: that.pdground, // 定位角点颜色
+				correctLevel: that.lv, // 容错级别
+				image: that.icon, // 二维码图标
+				imageSize: that.iconSize,// 二维码图标大小
+				cbResult: function (res) { // 生成二维码的回调
 					that._result(res)
 				}
 			});
 		},
-		_clearCode(){
+		_clearCode() {
 			this._result('')
 			qrcode.clear()
 		},

@@ -1,6 +1,12 @@
 # uni-app 二维码生成器
 ### 作者：诗小柒
 
+二维码生成器
+1.H5、小程序、APP通用  
+2.使用canvas生成  
+3.可设置二维码背景色，前景色，角标色  
+4.可设置二维码logo  
+5.不懂如何使用可以去[github](https://github.com/q310550690/uni-app-qrcode)直接打包下载运行  
 
 ## 开始使用
 
@@ -11,11 +17,11 @@ https://github.com/q310550690/uni-app-qrcode
 ### 1.引入组件
 ```javascript
 // template 使用
-<tki-qrcode :val="qrval" :size="qrsize" :colorDark="qrColorDark" :colorLight="qrColorLight" ref="qrcode" @result="qrR"></tki-qrcode>
+<tki-qrcode :val="qrval" :size="qrsize" :background="qrbackground" :foreground="qrforeground" :pdground="qrpdground" :icon="qricon" :iconSize="qriconsize" :lv="qrlv" ref="qrcode" @result="qrR"></tki-qrcode>
 
 // 普通引入组件
 import tkiQrcode from '@/components/tki-qrcode/tki-qrcode.vue'
-// npmy引入
+// npm引入
 import tkiQrcode from "tki-qrcode"
 // 注册组件
 components: {
@@ -26,7 +32,7 @@ components: {
 ### 2.属性
 `size` Number
 ```
-size 生成的二维码大小  默认值：100
+size 生成的二维码大小  默认值：200
 ```
 `show` Boolean
 ```
@@ -36,13 +42,29 @@ show 默认使用组件中的image标签显示二维码  默认值：true
 ```
 val 要生成的内容  默认值：
 ```
-`colorDark` String 
+`background` String 
 ```
-colorDark 背景色   默认值：#000000
+background 二维码背景色   默认值：#000000
 ```
-`colorLight` String 
+`foreground` String 
 ```
-colorLight 前景色   默认值：#ffffff
+foreground 二维码前景色   默认值：#ffffff
+```
+`pdground` String 
+```
+pdground 二维码角标色   默认值：#ffffff
+```
+`icon` String 
+```
+icon 二维码图标URL   默认值：空
+```
+`iconSize` Number 
+```
+iconSize 二维码图标大小   默认值：40   注意此大小不会跟随二维码size 动态变化，设置时需注意大小，不要太大，以免无法识别
+```
+`lv` Number 
+```
+lv 容错级别   默认值：3   一般不用设置
 ```
 
 ### 3.方法
@@ -71,4 +93,4 @@ _saveCode() 保存二维码到图库
 ### 6.感谢
 
 [uni-app](https://uniapp.dcloud.io/ "uni-app")
-[weapp-qrcode](https://github.com/tomfriwel/weapp-qrcode "weapp-qrcode")
+[qrcode](https://github.com/aralejs/qrcode "qrcode")
