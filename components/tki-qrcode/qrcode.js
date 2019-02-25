@@ -1142,12 +1142,19 @@ let QRCode = {};
                     quality: Number(1),
                     success: function (res) {
                         if (options.cbResult) {
-                            options.cbResult(res.tempFilePath)
+                            // 由于官方还没有统一此接口的输出字段，所以先判定下  支付宝为 res.apFilePath
+                            if (!empty(res.tempFilePath)) {
+                                options.cbResult(res.tempFilePath)
+                            } else if (!empty(res.apFilePath)) {
+                                options.cbResult(res.apFilePath)
+                            } else {
+                                options.cbResult(res.tempFilePath)
+                            }
                         }
                     },
                     fail: function (res) {
                         if (options.cbResult) {
-                            options.cbResult(res.tempFilePath)
+                            options.cbResult(res)
                         }
                     },
                     complete: function () {
@@ -1157,6 +1164,23 @@ let QRCode = {};
             })
         }
         createCanvas(this.options)
+        // 空判定
+        let empty = function (v) {
+            let tp = typeof v,
+                rt = false;
+            if (tp == "number" && String(v) == "") {
+                rt = true
+            } else if (tp == "undefined") {
+                rt = true
+            } else if (tp == "object") {
+                if (JSON.stringify(v) == "{}" || JSON.stringify(v) == "[]" || v == null) rt = true
+            } else if (tp == "string") {
+                if (v == "" || v == "undefined" || v == "null" || v == "{}" || v == "[]") rt = true
+            } else if (tp == "function") {
+                rt = false
+            }
+            return rt
+        }
     };
     QRCode.prototype.clear = function (fn) {
         var ctx = uni.createCanvasContext(this.options.canvasId)

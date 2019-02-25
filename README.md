@@ -1,7 +1,6 @@
 # uni-app 二维码生成器
 ### 作者：诗小柒
 
-二维码生成器
 1.H5、小程序、APP通用  
 2.使用canvas生成  
 3.可设置二维码背景色，前景色，角标色  
@@ -13,7 +12,8 @@
 npm i tki-qrcode
 或
 https://github.com/q310550690/uni-app-qrcode 
-
+### 0.更新说明
+修复官方 uni.canvasToTempFilePath 在有些平台返回字段不统一而导致的支付宝无法生成二维码的问题。
 ### 1.引入组件
 ```javascript
 // template 使用

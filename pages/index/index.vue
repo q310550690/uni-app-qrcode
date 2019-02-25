@@ -86,7 +86,7 @@ export default {
 				sourceType: ['album'], //从相册选择
 				success: function (res) {
 					that.qricon = res.tempFilePaths[0]
-					console.log(res.tempFilePaths);
+					// console.log(res.tempFilePaths);
 				}
 			});
 		}
