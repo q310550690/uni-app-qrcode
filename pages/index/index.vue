@@ -3,6 +3,7 @@
 		<!-- <page-head :title="title"></page-head> -->
 		<view class="qrimg">
 			<tki-qrcode :val="qrval" :size="qrsize" :background="qrbackground" :foreground="qrforeground" :pdground="qrpdground" :icon="qricon" :iconSize="qriconsize" :lv="qrlv" ref="qrcode" @result="qrR"></tki-qrcode>
+			<!-- <tki-qrcode :val="qrval" :size="qrsize" :icon="qricon" :iconSize="qriconsize" :lv="qrlv" ref="qrcode" @result="qrR"></tki-qrcode> -->
 		</view>
 		<view class="uni-padding-wrap">
 			<view class="uni-title">请输入要生成的二维码内容</view>

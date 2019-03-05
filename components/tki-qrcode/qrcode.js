@@ -1027,6 +1027,7 @@ let QRCode = {};
             correctLevel: 3,
             background: '#ffffff',
             foreground: '#000000',
+			pdground: '#000000',
             image: '',
             imageSize: 30,
             canvasId: '_myQrCodeCanvas'

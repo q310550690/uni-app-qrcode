@@ -25,15 +25,15 @@ export default {
 		},
 		background: {
 			type: String,
-			default: '#000000'
+			default: '#ffffff'
 		},
 		foreground: {
 			type: String,
-			default: '#ffffff'
+			default: '#000000'
 		},
 		pdground: {
 			type: String,
-			default: '#ffffff'
+			default: '#000000'
 		},
 		icon: {
 			type: String,
