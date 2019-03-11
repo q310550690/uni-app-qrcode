@@ -1,7 +1,7 @@
 <template xlang="wxml" minapp="mpvue">
 	<view class="_qrCode">
 		<canvas class="_qrCodeCanvas" id="_myQrCodeCanvas" canvas-id="_myQrCodeCanvas" :style="{width:cSize+'px',height:cSize+'px'}" />
-		<image v-if="show" :src="result" :style="{width:cSize+'px',height:cSize+'px'}" />
+		<image v-show="show" :src="result" :style="{width:cSize+'px',height:cSize+'px'}" />
 	</view>
 </template>
 

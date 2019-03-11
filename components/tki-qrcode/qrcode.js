@@ -1027,7 +1027,7 @@ let QRCode = {};
             correctLevel: 3,
             background: '#ffffff',
             foreground: '#000000',
-			pdground: '#000000',
+            pdground: '#000000',
             image: '',
             imageSize: 30,
             canvasId: '_myQrCodeCanvas'
@@ -1134,34 +1134,36 @@ let QRCode = {};
             }
             ctx.draw(false, () => {
                 // 保存到临时区域
-                uni.canvasToTempFilePath({
-                    width: options.width,
-                    height: options.height,
-                    destWidth: options.width,
-                    destHeight: options.height,
-                    canvasId: options.canvasId,
-                    quality: Number(1),
-                    success: function (res) {
-                        if (options.cbResult) {
-                            // 由于官方还没有统一此接口的输出字段，所以先判定下  支付宝为 res.apFilePath
-                            if (!empty(res.tempFilePath)) {
-                                options.cbResult(res.tempFilePath)
-                            } else if (!empty(res.apFilePath)) {
-                                options.cbResult(res.apFilePath)
-                            } else {
-                                options.cbResult(res.tempFilePath)
+                setTimeout(() => {
+                    uni.canvasToTempFilePath({
+                        width: options.width,
+                        height: options.height,
+                        destWidth: options.width,
+                        destHeight: options.height,
+                        canvasId: options.canvasId,
+                        quality: Number(1),
+                        success: function (res) {
+                            if (options.cbResult) {
+                                // 由于官方还没有统一此接口的输出字段，所以先判定下  支付宝为 res.apFilePath
+                                if (!empty(res.tempFilePath)) {
+                                    options.cbResult(res.tempFilePath)
+                                } else if (!empty(res.apFilePath)) {
+                                    options.cbResult(res.apFilePath)
+                                } else {
+                                    options.cbResult(res.tempFilePath)
+                                }
                             }
-                        }
-                    },
-                    fail: function (res) {
-                        if (options.cbResult) {
-                            options.cbResult(res)
-                        }
-                    },
-                    complete: function () {
-                        uni.hideLoading();
-                    },
-                })
+                        },
+                        fail: function (res) {
+                            if (options.cbResult) {
+                                options.cbResult(res)
+                            }
+                        },
+                        complete: function () {
+                            uni.hideLoading();
+                        },
+                    })
+                }, options.text.length + 100);
             })
         }
         createCanvas(this.options)

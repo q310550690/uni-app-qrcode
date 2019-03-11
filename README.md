@@ -14,7 +14,10 @@ npm i tki-qrcode
 或
 https://github.com/q310550690/uni-app-qrcode 
 ### 0.更新说明
-修复官方 uni.canvasToTempFilePath 在有些平台返回字段不统一而导致的支付宝无法生成二维码的问题。
+* 0.0.9修复小程序真机生成二维码错乱问题（其实这是小程序canvas的锅）
+* 0.0.8修复官方 uni.canvasToTempFilePath 在有些平台返回字段不统一而导致的支付宝无法生成二维码的问题。
+* 0.0.7 常规修复
+* 0.0.6 新增角标色、二维码logo 
 ### 1.引入组件
 ```javascript
 // template 使用
