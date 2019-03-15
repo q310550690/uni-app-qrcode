@@ -69,7 +69,7 @@ pdground 二维码角标色   默认值：#ffffff
 ```
 `icon` String 
 ```
-icon 二维码图标URL   默认值：空
+icon 二维码图标URL（必须是本地图片，网络图需要先下载至本地）   默认值：空
 ```
 `iconSize` Number 
 ```
