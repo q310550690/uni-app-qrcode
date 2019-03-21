@@ -77,7 +77,8 @@ export default {
 					imageSize: that.iconSize,// 二维码图标大小
 					cbResult: function (res) { // 生成二维码的回调
 						that._result(res)
-					}
+					},
+					context: this
 				});
 			} else {
 				uni.showToast({

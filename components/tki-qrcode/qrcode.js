@@ -1030,7 +1030,8 @@ let QRCode = {};
             pdground: '#000000',
             image: '',
             imageSize: 30,
-            canvasId: '_myQrCodeCanvas'
+            canvasId: '_myQrCodeCanvas',
+            context: opt.context
         };
         if (typeof opt === 'string') { // 只编码ASCII字符串
             opt = {
@@ -1079,13 +1080,12 @@ let QRCode = {};
             return options.foreground;
         }
         // 创建canvas
-        let createCanvas = function (config) {
+        let createCanvas = function (options) {
             uni.showLoading({
                 title: "二维码生成中",
                 mask: true
             });
-            var options = config;
-            var ctx = uni.createCanvasContext(options.canvasId);
+            var ctx = uni.createCanvasContext(options.canvasId, options.context);
             var count = qrCodeAlg.getModuleCount();
             var ratioSize = options.size;
             var ratioImgSize = options.imageSize;
@@ -1162,11 +1162,11 @@ let QRCode = {};
                         complete: function () {
                             uni.hideLoading();
                         },
-                    })
+                    }, options.context);
                 }, options.text.length + 100);
-            })
+            });
         }
-        createCanvas(this.options)
+        createCanvas(this.options);
         // 空判定
         let empty = function (v) {
             let tp = typeof v,
