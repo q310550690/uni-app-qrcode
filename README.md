@@ -16,10 +16,14 @@
 + 图片5 H5
 
 ## 开始使用
-
+NPM 
+```
 npm i tki-qrcode
-或
-https://github.com/q310550690/uni-app-qrcode
+```
+GIT 
+```
+git clone https://github.com/q310550690/uni-app-qrcode
+```
 
 ### 更新说明
 
