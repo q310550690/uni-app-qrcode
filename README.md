@@ -23,12 +23,13 @@ https://github.com/q310550690/uni-app-qrcode
 
 ### 更新说明
 
+* 0.1.2 适配新版uni-app编译器 感谢 "DCloud_UNI_Trust"
 * 0.1.1 新增监听val值变化时自动生成二维码(onval)、新增组件初始化时自动生成二维码(loadMake) 属性，具体说明看文档说明
 * 0.1.0 常规更新
 * 0.0.9 修复小程序真机生成二维码错乱问题（其实这是小程序canvas的锅）
 * 0.0.8 修复官方 uni.canvasToTempFilePath 在有些平台返回字段不统一而导致的支付宝无法生成二维码的问题。
 * 0.0.7 常规修复
-* 0.0.6 新增角标色、二维码logo 
+* 0.0.6 新增角标色、二维码logo
 
 ### 1.引入组件
 ```javascript

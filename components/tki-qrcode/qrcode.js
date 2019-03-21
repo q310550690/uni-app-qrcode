@@ -1186,7 +1186,7 @@ let QRCode = {};
         }
     };
     QRCode.prototype.clear = function (fn) {
-        var ctx = uni.createCanvasContext(this.options.canvasId)
+        var ctx = uni.createCanvasContext(this.options.canvasId,this.options.context)
         ctx.clearRect(0, 0, this.options.size, this.options.size)
         ctx.draw(false, () => {
             if (fn) {

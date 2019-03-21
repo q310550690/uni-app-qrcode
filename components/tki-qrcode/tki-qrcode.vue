@@ -1,7 +1,7 @@
 <template xlang="wxml" minapp="mpvue">
 	<view class="_qrCode">
-		<canvas class="_qrCodeCanvas" id="_myQrCodeCanvas" canvas-id="_myQrCodeCanvas" :style="{width:cSize+'px',height:cSize+'px'}" />
-		<image v-show="show" :src="result" :style="{width:cSize+'px',height:cSize+'px'}" />
+		<canvas class="_qrCodeCanvas" id="_myQrCodeCanvas" canvas-id="_myQrCodeCanvas" :style="{width:size+'px',height:size+'px'}" />
+		<image v-show="show" :src="result" :style="{width:size+'px',height:size+'px'}" />
 	</view>
 </template>
 
@@ -58,7 +58,6 @@ export default {
 	},
 	data() {
 		return {
-			cSize: this.size,
 			result: '',
 		}
 	},
@@ -67,8 +66,9 @@ export default {
 			let that = this
 			if (!this._empty(this.val)) {
 				qrcode = new QRCode({
+					context: that,
 					text: that.val, // 生成内容
-					size: that.cSize, // 二维码大小
+					size: that.size, // 二维码大小
 					background: that.background, // 背景色
 					foreground: that.foreground, // 前景色
 					pdground: that.pdground, // 定位角点颜色
@@ -78,7 +78,6 @@ export default {
 					cbResult: function (res) { // 生成二维码的回调
 						that._result(res)
 					},
-					context: this
 				});
 			} else {
 				uni.showToast({
@@ -149,6 +148,7 @@ export default {
 			}
 		}
 	},
+	computed:{},
 	mounted: function () {
 		if (this.loadMake) {
 			if (!this._empty(this.val)) {
@@ -157,7 +157,7 @@ export default {
 				}, 0);
 			}
 		}
-	}
+	},
 }
 </script>
 <style>
