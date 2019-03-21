@@ -23,7 +23,7 @@ https://github.com/q310550690/uni-app-qrcode
 
 ### 更新说明
 
-* 0.1.2 适配新版uni-app编译器 感谢 "DCloud_UNI_Trust"
+* 0.1.2 适配新版uni-app编译器 感谢 "DCloud_UNI_Trust" (如果github上下载后使用新版HbuilderX1.7.1.20190320编译后无法启动请等待Dcloud更新即可)
 * 0.1.1 新增监听val值变化时自动生成二维码(onval)、新增组件初始化时自动生成二维码(loadMake) 属性，具体说明看文档说明
 * 0.1.0 常规更新
 * 0.0.9 修复小程序真机生成二维码错乱问题（其实这是小程序canvas的锅）
