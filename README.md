@@ -80,6 +80,14 @@ iconSize 二维码图标大小   默认值：40   注意此大小不会跟随二
 ```
 lv 容错级别   默认值：3   一般不用设置
 ```
+`onval` Boolean 
+```
+onval 监听val值变化自动重新生成二维码 默认值 false
+```
+`loadMake` Boolean 
+```
+loadMake 组件初始化完成后自动生成二维码，val需要有值  默认值 false
+```
 
 ### 3.方法
 `_makeCode()` Function
