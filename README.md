@@ -67,25 +67,25 @@ export default {
 
 |属性名|类型|默认值|可选值|说明|
 |:-|:-:|:--:|:--:|-:|
-|size|Number|200||生成的二维码大小|
+|size|Number|200| |生成的二维码大小|
 |unit|String|upx|px|大小单位尺寸|
-|show|Boolean|true||默认使用组件中的image标签显示二维码|
-|val|String|二维码||要生成的内容|
-|background|String|#000000||二维码背景色|
-|foreground|String|#ffffff||二维码前景色|
-|pdground|String|#ffffff||二维码角标色|
-|icon|String|||二维码图标URL（必须是本地图片，网络图需要先下载至本地）|
-|iconSize|Number|40<br/>注意此大小不会跟随二维码size 动态变化，设置时需注意大小，不要太大，以免无法识别||二维码图标大小|
-|lv|Number|3（一般不用设置）||容错级别|
-|onval|Boolean|false||监听val值变化自动重新生成二维码|
-|loadMake|Boolean|false||组件初始化完成后自动生成二维码，val需要有值|
+|show|Boolean|true| |默认使用组件中的image标签显示二维码|
+|val|String|二维码| |要生成的内容|
+|background|String|#000000| |二维码背景色|
+|foreground|String|#ffffff| |二维码前景色|
+|pdground|String|#ffffff| |二维码角标色|
+|icon|String| | |二维码图标URL（必须是本地图片，网络图需要先下载至本地）|
+|iconSize|Number|40<br/>注意此大小不会跟随二维码size 动态变化，设置时需注意大小，不要太大，以免无法识别| |二维码图标大小|
+|lv|Number|3（一般不用设置）| |容错级别|
+|onval|Boolean|false| |监听val值变化自动重新生成二维码|
+|loadMake|Boolean|false| |组件初始化完成后自动生成二维码，val需要有值|
 
 ### 方法
 |方法名|参数|默认值|说明|
 |:-|:-:|:--:|-:|
-|_makeCode()|||生成二维码|
-|_clearCode()|||清空二维码（清空二维码会触发result回调 返回值为空）|
-|_saveCode()|||保存二维码到图库|
+|_makeCode()| | |生成二维码|
+|_clearCode()| | |清空二维码（清空二维码会触发result回调 返回值为空）|
+|_saveCode()| | |保存二维码到图库|
 
 ### 事件
 |事件名|返回值|说明|
