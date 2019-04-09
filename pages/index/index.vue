@@ -44,6 +44,7 @@ export default {
 		return {
 			val: '二维码', // 要生成的二维码值
 			size: 200, // 二维码大小
+			unit: 'upx', // 单位
 			background: '#b4e9e2', // 背景色
 			foreground: '#309286', // 前景色
 			pdground: '#32dbc6', // 角标色

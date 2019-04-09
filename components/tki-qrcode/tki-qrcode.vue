@@ -1,7 +1,7 @@
 <template xlang="wxml" minapp="mpvue">
 	<view class="_qrCode">
-		<canvas class="_qrCodeCanvas" id="_myQrCodeCanvas" canvas-id="_myQrCodeCanvas" :style="{width:size+'px',height:size+'px'}" />
-		<image v-show="show" :src="result" :style="{width:size+'px',height:size+'px'}" />
+		<canvas class="_qrCodeCanvas" id="_myQrCodeCanvas" canvas-id="_myQrCodeCanvas" :style="{width:cpSize+'px',height:cpSize+'px'}" />
+		<image v-show="show" :src="result" :style="{width:cpSize+'px',height:cpSize+'px'}" />
 	</view>
 </template>
 
@@ -14,6 +14,10 @@ export default {
 		size: {
 			type: Number,
 			default: 200
+		},
+		unit: {
+			type: String,
+			default: 'upx'
 		},
 		show: {
 			type: Boolean,
@@ -68,7 +72,7 @@ export default {
 				qrcode = new QRCode({
 					context: that,
 					text: that.val, // 生成内容
-					size: that.size, // 二维码大小
+					size: that.cpSize, // 二维码大小
 					background: that.background, // 背景色
 					foreground: that.foreground, // 前景色
 					pdground: that.pdground, // 定位角点颜色
@@ -131,7 +135,7 @@ export default {
 		size: function (n, o) {
 			if (n != o && !this._empty(n)) {
 				this.cSize = n
-				if(!this._empty(this.val)){
+				if (!this._empty(this.val)) {
 					setTimeout(() => {
 						this._makeCode()
 					}, 100);
@@ -148,7 +152,15 @@ export default {
 			}
 		}
 	},
-	computed:{},
+	computed: {
+		cpSize() {
+			if(this.unit == "upx"){
+				return uni.upx2px(this.size)
+			}else{
+				return this.size
+			}
+		}
+	},
 	mounted: function () {
 		if (this.loadMake) {
 			if (!this._empty(this.val)) {
