@@ -5,6 +5,7 @@
 			ref="qrcode" 
 			:val="val" 
 			:size="size" 
+			:unit="unit" 
 			:background="background" 
 			:foreground="foreground" 
 			:pdground="pdground" 
