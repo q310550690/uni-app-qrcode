@@ -1,20 +1,7 @@
 <template xlang="wxml">
 	<view class="container">
 		<view class="qrimg">
-			<tki-qrcode 
-			ref="qrcode" 
-			:val="val" 
-			:size="size" 
-			:unit="unit" 
-			:background="background" 
-			:foreground="foreground" 
-			:pdground="pdground" 
-			:icon="icon" 
-			:iconSize="iconsize" 
-			:lv="lv" 
-			:onval="onval"
-			:loadMake="loadMake"
-			@result="qrR" />
+			<tki-qrcode v-if="ifShow" ref="qrcode" :val="val" :size="size" :unit="unit" :background="background" :foreground="foreground" :pdground="pdground" :icon="icon" :iconSize="iconsize" :lv="lv" :onval="onval" :loadMake="loadMake" :usingComponents="true" @result="qrR" />
 		</view>
 		<view class="uni-padding-wrap">
 			<view class="uni-title">请输入要生成的二维码内容</view>
@@ -34,6 +21,7 @@
 				<button type="primary" @tap="creatQrcode">生成二维码</button>
 				<button type="primary" @tap="saveQrcode">保存到图库</button>
 				<button type="warn" @tap="clearQrcode">清除二维码</button>
+				<button type="warn" @tap="ifQrcode">显示隐藏二维码</button>
 			</view>
 		</view>
 	</view>
@@ -43,6 +31,7 @@ import tkiQrcode from '@/components/tki-qrcode/tki-qrcode.vue'
 export default {
 	data() {
 		return {
+			ifShow: true,
 			val: '二维码', // 要生成的二维码值
 			size: 200, // 二维码大小
 			unit: 'upx', // 单位
@@ -52,7 +41,7 @@ export default {
 			icon: '', // 二维码图标
 			iconsize: 40, // 二维码图标大小
 			lv: 3, // 二维码容错级别 ， 一般不用设置，默认就行
-			onval: true, // val值变化时自动重新生成二维码
+			onval: false, // val值变化时自动重新生成二维码
 			loadMake: true, // 组件加载完成后自动生成二维码
 			src: '' // 二维码生成后的图片地址或base64
 		}
@@ -74,6 +63,9 @@ export default {
 			this.$refs.qrcode._clearCode()
 			this.val = ''
 		},
+		ifQrcode() {
+			this.ifShow = !this.ifShow
+		},
 		selectIcon() {
 			let that = this
 			uni.chooseImage({
@@ -93,35 +85,39 @@ export default {
 	components: {
 		tkiQrcode
 	},
-	onLoad: function () {
-	}
+	onLoad: function () { },
 }
 </script>
 
 <style>
 /* @import "../../../common/icon.css"; */
 .container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.qrimg {
-  display: flex;
-  justify-content: center;
-}
-slider {
-  width: 100%;
-}
-input{
-	width: 100%;
-	margin-bottom: 20upx;
-}
-.btns{
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
-button{
+
+.qrimg {
+	display: flex;
+	justify-content: center;
+}
+
+slider {
+	width: 100%;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 20upx;
+}
+
+.btns {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+button {
 	width: 100%;
 	margin-top: 10upx;
 }

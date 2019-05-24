@@ -59,6 +59,10 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		usingComponents: {
+			type: Boolean,
+			default: true
+		},
 	},
 	data() {
 		return {
@@ -71,6 +75,7 @@ export default {
 			if (!this._empty(this.val)) {
 				qrcode = new QRCode({
 					context: that,
+					usingComponents: that.usingComponents,
 					text: that.val, // 生成内容
 					size: that.cpSize, // 二维码大小
 					background: that.background, // 背景色

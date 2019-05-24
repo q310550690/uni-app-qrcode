@@ -43,7 +43,8 @@
             "ios" : {},
             /* ios打包配置 */
             "sdkConfigs" : {}
-        }
+        },
+		"usingComponents": true
     },
     /* SDK配置 */
     "quickapp" : {},
