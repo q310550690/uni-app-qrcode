@@ -1032,7 +1032,9 @@ let QRCode = {};
             imageSize: 30,
             canvasId: '_myQrCodeCanvas',
             context: opt.context,
-            usingComponents: opt.usingComponents
+            usingComponents: opt.usingComponents,
+            showLoading: opt.showLoading,
+            loadingText: opt.loadingText,
         };
         if (typeof opt === 'string') { // 只编码ASCII字符串
             opt = {
@@ -1082,10 +1084,12 @@ let QRCode = {};
         }
         // 创建canvas
         let createCanvas = function (options) {
-            uni.showLoading({
-                title: "二维码生成中",
-                mask: true
-            });
+            if(options.showLoading){
+                uni.showLoading({
+                    title: options.loadingText,
+                    mask: true
+                });
+            }
             var ctx = uni.createCanvasContext(options.canvasId, options.context);
             var count = qrCodeAlg.getModuleCount();
             var ratioSize = options.size;

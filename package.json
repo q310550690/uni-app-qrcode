@@ -1,6 +1,6 @@
 {
   "name": "tki-qrcode",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "qrcode",
   "main": "components/tki-qrcode/tki-qrcode.vue",
   "scripts": {

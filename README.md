@@ -27,6 +27,7 @@ git clone https://github.com/q310550690/uni-app-qrcode
 
 ### 更新说明
 
+* 0.1.5 新增showLoading、loadingText属性
 * 0.1.4 新增usingComponents属性，修复非自定义组件下 v-if 无法生成二维码的问题（非自定义组件下设置为false）
 * 0.1.3 新增unit属性
 * 0.1.2 适配新版uni-app编译器 感谢 "DCloud_UNI_Trust" (如果github上下载后使用新版HbuilderX1.7.1.20190320编译后无法启动请等待Dcloud更新即可)
@@ -62,6 +63,8 @@ export default {
     :onval="onval"
     :loadMake="loadMake"
     :usingComponents="usingComponents"
+    :showLoading="showLoading"
+    :loadingText="loadingText"
     @result="qrR" />
 </view>
 ```
@@ -82,6 +85,8 @@ export default {
 |onval|Boolean|false| |监听val值变化自动重新生成二维码|
 |loadMake|Boolean|false| |组件初始化完成后自动生成二维码，val需要有值|
 |usingComponents|Boolean|true| false |是否使用了自定义组件模式（主要是为了修复非自定义组件模式时 v-if 无法生成二维码的问题）|
+|showLoading|Boolean|true| false |是否显示loading|
+|loadingText|String|二维码生成中| |loading文字|
 
 ### 方法
 |方法名|参数|默认值|说明|

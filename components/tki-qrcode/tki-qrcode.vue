@@ -63,6 +63,14 @@ export default {
 			type: Boolean,
 			default: true
 		},
+		showLoading: {
+			type: Boolean,
+			default: true
+		},
+		loadingText: {
+			type: String,
+			default: '二维码生成中'
+		},
 	},
 	data() {
 		return {
@@ -76,6 +84,8 @@ export default {
 				qrcode = new QRCode({
 					context: that,
 					usingComponents: that.usingComponents,
+					showLoading: that.showLoading,
+					loadingText: that.loadingText,
 					text: that.val, // 生成内容
 					size: that.cpSize, // 二维码大小
 					background: that.background, // 背景色
