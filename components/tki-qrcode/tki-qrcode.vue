@@ -1,6 +1,6 @@
 <template xlang="wxml" minapp="mpvue">
-	<view class="_qrCode">
-		<canvas class="_qrCodeCanvas" id="_myQrCodeCanvas" canvas-id="_myQrCodeCanvas" :style="{width:cpSize+'px',height:cpSize+'px'}" />
+	<view class="tki-qrcode">
+		<canvas class="tki-qrcode-canvas" :canvas-id="cid" :style="{width:cpSize+'px',height:cpSize+'px'}" />
 		<image v-show="show" :src="result" :style="{width:cpSize+'px',height:cpSize+'px'}" />
 	</view>
 </template>
@@ -11,6 +11,10 @@ let qrcode
 export default {
 	name: "tki-qrcode",
 	props: {
+		cid: {
+			type: String,
+			default: 'tki-qrcode-canvas'
+		},
 		size: {
 			type: Number,
 			default: 200
@@ -82,10 +86,11 @@ export default {
 			let that = this
 			if (!this._empty(this.val)) {
 				qrcode = new QRCode({
-					context: that,
-					usingComponents: that.usingComponents,
-					showLoading: that.showLoading,
-					loadingText: that.loadingText,
+					context: that, // 上下文环境
+					canvasId:that.cid, // canvas-id
+					usingComponents: that.usingComponents, // 是否是自定义组件
+					showLoading: that.showLoading, // 是否显示loading
+					loadingText: that.loadingText, // loading文字
 					text: that.val, // 生成内容
 					size: that.cpSize, // 二维码大小
 					background: that.background, // 背景色
@@ -188,10 +193,10 @@ export default {
 }
 </script>
 <style>
-._qrCode {
+.tki-qrcode {
   position: relative;
 }
-._qrCodeCanvas {
+.tki-qrcode-canvas {
   position: fixed;
   top: -99999upx;
   left: -99999upx;

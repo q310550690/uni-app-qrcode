@@ -1,7 +1,12 @@
 <template xlang="wxml">
 	<view class="container">
 		<view class="qrimg">
-			<tki-qrcode v-if="ifShow" ref="qrcode" :val="val" :size="size" :unit="unit" :background="background" :foreground="foreground" :pdground="pdground" :icon="icon" :iconSize="iconsize" :lv="lv" :onval="onval" :loadMake="loadMake" :usingComponents="true" @result="qrR" />
+			<view class="qrimg-i">
+				<tki-qrcode v-if="ifShow" cid="qrcode1" ref="qrcode" :val="val" :size="size" :unit="unit" :background="background" :foreground="foreground" :pdground="pdground" :icon="icon" :iconSize="iconsize" :lv="lv" :onval="onval" :loadMake="loadMake" :usingComponents="true" @result="qrR" />
+			</view>
+			<view class="qrimg-i">
+				<tki-qrcode v-if="ifShow" cid="qrcode2" ref="qrcode2" val="第二个二维码" :size="size" :onval="onval" :loadMake="loadMake" :usingComponents="true" @result="qrR" />
+			</view>
 		</view>
 		<view class="uni-padding-wrap">
 			<view class="uni-title">请输入要生成的二维码内容</view>
@@ -100,6 +105,9 @@ export default {
 .qrimg {
 	display: flex;
 	justify-content: center;
+}
+.qrimg-i{
+	margin-right: 10px;
 }
 
 slider {

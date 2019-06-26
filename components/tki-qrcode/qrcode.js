@@ -1030,7 +1030,7 @@ let QRCode = {};
             pdground: '#000000',
             image: '',
             imageSize: 30,
-            canvasId: '_myQrCodeCanvas',
+            canvasId: opt.canvasId,
             context: opt.context,
             usingComponents: opt.usingComponents,
             showLoading: opt.showLoading,
