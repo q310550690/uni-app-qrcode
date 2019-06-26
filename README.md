@@ -31,7 +31,7 @@ git clone https://github.com/q310550690/uni-app-qrcode
 
 ### 更新说明
 
-* 0.1.6 新增cid属性，解决同一个页面无法使用多个组件的问题
+* 0.1.6 新增cid属性，支持同一个页面使用多个二维码组件
 * 0.1.5 新增showLoading、loadingText属性
 * 0.1.4 新增usingComponents属性，修复非自定义组件下 v-if 无法生成二维码的问题（非自定义组件下设置为false）
 * 0.1.3 新增unit属性
