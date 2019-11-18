@@ -30,7 +30,7 @@ git clone https://github.com/q310550690/uni-app-qrcode
 ```
 
 ### 更新说明
-
+* 0.1.7 修复支付宝无法生成的问题（导致这个问题是uni-app官方的template编译器没有编译出支付宝识别的canvas组件）
 * 0.1.6 新增cid属性，支持同一个页面使用多个二维码组件
 * 0.1.5 新增showLoading、loadingText属性
 * 0.1.4 新增usingComponents属性，修复非自定义组件下 v-if 无法生成二维码的问题（非自定义组件下设置为false）
