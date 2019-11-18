@@ -1084,7 +1084,7 @@ let QRCode = {};
         }
         // 创建canvas
         let createCanvas = function (options) {
-            if(options.showLoading){
+            if (options.showLoading) {
                 uni.showLoading({
                     title: options.loadingText,
                     mask: true
@@ -1150,14 +1150,7 @@ let QRCode = {};
                             quality: Number(1),
                             success: function (res) {
                                 if (options.cbResult) {
-                                    // 由于官方还没有统一此接口的输出字段，所以先判定下  支付宝为 res.apFilePath
-                                    if (!empty(res.tempFilePath)) {
-                                        options.cbResult(res.tempFilePath)
-                                    } else if (!empty(res.apFilePath)) {
-                                        options.cbResult(res.apFilePath)
-                                    } else {
-                                        options.cbResult(res.tempFilePath)
-                                    }
+                                    options.cbResult(res.tempFilePath)
                                 }
                             },
                             fail: function (res) {
@@ -1166,7 +1159,9 @@ let QRCode = {};
                                 }
                             },
                             complete: function () {
-                                uni.hideLoading();
+                                if (options.showLoading){
+                                    uni.hideLoading();
+                                }
                             },
                         }, options.context);
                     }, options.text.length + 100);
