@@ -1,7 +1,7 @@
 <template xlang="wxml" minapp="mpvue">
 	<view class="tki-qrcode">
 		<!-- #ifndef MP-ALIPAY -->
-		<canvas class="tki-qrcode-canvas" :canvas-id="cid" :style="{width:cpSize+'px',height:cpSize+'px'}" />
+		<canvas class="tki-qrcode-canvas" :canvas-id="cid" :id="cid" :style="{width:cpSize+'px',height:cpSize+'px'}" />
 		<!-- #endif -->
 		<!-- #ifdef MP-ALIPAY -->
 		<canvas :id="cid" :width="cpSize" :height="cpSize" class="tki-qrcode-canvas" />
