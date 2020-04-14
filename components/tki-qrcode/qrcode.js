@@ -1138,6 +1138,7 @@ let QRCode = {};
                 }
             }
             setTimeout(() => {
+                // #ifndef MP-DINGTALK
                 ctx.draw(true, () => {
                     // 保存到临时区域
                     setTimeout(() => {
@@ -1166,6 +1167,34 @@ let QRCode = {};
                         }, options.context);
                     }, options.text.length + 100);
                 });
+                // #endif
+                
+                // #ifdef MP-DINGTALK
+                ctx.draw(true);
+                // 保存到临时区域
+                setTimeout(() => {
+                    ctx.toTempFilePath({
+                        width: options.width,
+                        height: options.height,
+                        destWidth: options.width,
+                        destHeight: options.height,
+                        success: function(res) {
+                            if (options.cbResult) {
+                              options.cbResult(res.filePath)
+                            }
+                        },
+                        fail: function(res) {
+                            if (options.cbResult) {
+                              options.cbResult(res)
+                            }
+                        },
+                        complete: function() {
+                            uni.hideLoading();
+                        }
+                    })
+                }, options.text.length + 100);
+                // #endif
+                
             }, options.usingComponents ? 0 : 150);
         }
         createCanvas(this.options);

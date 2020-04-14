@@ -1,7 +1,7 @@
 <template xlang="wxml" minapp="mpvue">
 	<view class="tki-qrcode">
 		<!-- #ifndef MP-ALIPAY -->
-		<canvas class="tki-qrcode-canvas" :canvas-id="cid" :style="{width:cpSize+'px',height:cpSize+'px'}" />
+		<canvas :canvas-id="cid" :style="{width:cpSize+'px',height:cpSize+'px'}" class="tki-qrcode-canvas" />
 		<!-- #endif -->
 		<!-- #ifdef MP-ALIPAY -->
 		<canvas :id="cid" :width="cpSize" :height="cpSize" class="tki-qrcode-canvas" />
@@ -191,7 +191,7 @@ export default {
 			if (!this._empty(this.val)) {
 				setTimeout(() => {
 					this._makeCode()
-				}, 0);
+				}, 300);
 			}
 		}
 	},
